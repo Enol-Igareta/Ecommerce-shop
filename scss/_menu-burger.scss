@@ -1,0 +1,57 @@
+@use "colors" as c;
+@use "fonts" as f;
+@use "mixins" as m;
+
+.toggle-menu {
+  position: relative;
+  visibility: hidden;
+  max-width: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .toggle-menu {
+    visibility: visible;
+    width: 4.9em;
+    left: -4.4%;
+    top: 0.11em;
+    z-index: 12;
+    cursor: none;
+  }
+  .toggle-button-burguer,
+  .toggle-button-x {
+    width: 1em;
+  }
+
+  .nav__list {
+    @include m.flex(flex, column, wrap, flex-start, flex-start);
+    transform: translateX(1000%);
+    background: map-get(c.$colors, "white");
+    height: 100vh;
+    width: 65%;
+    left: 0;
+    top:0;
+    position: absolute;
+    padding: 20% 0 0 4%;
+    z-index: 10;
+    
+  }
+
+  .list__options {
+    @include m.font(700, 1.3em, map-get(c.$colors, "black"));
+    margin: .61em;
+    &:hover{
+        padding-bottom: initial;
+        position: initial;
+        top: initial;
+        border-bottom: none;
+      
+    }
+  }
+
+  .toggle-menu--active {
+    transition: ease all 0.2s;
+    left: 0;
+    transform: translateX(0);
+  }
+
+}

@@ -1,0 +1,184 @@
+@use "colors" as c;
+@use "fonts" as f;
+@use "mixins" as m;
+
+.article-text {
+  width: 90%;
+    margin-top: 6em;
+    padding-left: 3em;
+    height: 50vh;
+  @include m.flex(flex, column, nowrap, space-between,flex-start);
+  &__company-name {
+    @include m.font(500, 16px, map-get(c.$colors, "orange"));
+    letter-spacing: .12em;
+  }
+  &__product-name {
+    @include m.font(700, 2.7em, map-get(c.$colors, "black"));
+  }
+
+  &__description {
+    @include m.font(500, 16px, map-get(c.$colors, "dark-grayish"));
+    letter-spacing: .04em;
+    width:80%;
+    line-height: 1.5em;
+  }
+  &__price {
+    .price__actual {
+      @include m.font(700, 1.7em, map-get(c.$colors, "black"));
+
+    }
+    .price__offert {
+      @include m.font(500, 1em, map-get(c.$colors, "orange"));
+      background: map-get(c.$colors, "pale-orange") ;
+      padding: .3em .5em;
+      border-radius: 5px;
+      position:relative;
+      top:-6px;
+      left: 12px;
+    }
+    .price__previous {
+      display: block;
+      @include m.font(500, 1em, map-get(c.$colors, "grayish"));
+      position:relative;
+      top: 10px;
+      text-decoration: line-through;
+    }
+  }
+  &__count {
+    width:77%;
+    @include m.flex(flex, row, nowrap, space-around, flex-start);
+  }
+
+  &__amount{
+    @include m.flex(flex, row, nowrap, space-around, center);
+    @include m.font(700, 1em, map-get(c.$colors, "black"));
+    background: map-get(c.$colors, "light-grayish");
+    width: 55%;
+    padding: 1em 0;
+    border-radius: 10px;
+    margin-right: 1em ;
+    img{
+      width:9%;
+      cursor: pointer;
+      &:hover{
+      filter: opacity(40%);
+      }
+    }
+  }
+  &__add {
+    @include m.flex(flex, row, wrap, center, flex-start);
+    @include m.font(700, .9em, map-get(c.$colors, "white"));
+    background: map-get(c.$colors, "orange");
+    width:100%;
+    border-radius: 10px;
+    padding: 1.2em 0;
+    cursor: pointer;
+    &:hover{
+      filter: opacity(40%);
+  }
+    
+    i{
+      @include m.font(700, .9em, map-get(c.$colors, "white"));
+      margin-right: 1em;
+      cursor: pointer;
+  
+    }
+
+  }
+}
+
+
+@media screen and (max-width:1000px){
+
+ .article-text{
+  margin-top: 3em;
+
+ }
+}
+
+
+@media screen and (max-width:768px){
+  .article-text{
+    margin: 0 auto;
+    margin-top:-17em;
+    padding-left: 0;
+    font-size: 10px;
+    height: auto; 
+    
+    &__company-name {
+      @include m.font(700, 13px, default);
+      letter-spacing: .12em;
+      margin-bottom: 1em;
+    }
+
+    &__product-name {
+      @include m.font(default, 2.5em, default);
+      margin-bottom: .6em;
+      line-height: 1.2em;
+
+    }
+
+    &__description {
+      @include m.font(default, 13px, default);
+      letter-spacing: .02em;
+      width:100%;
+      line-height: 1.6em;
+      margin-bottom: 2em;
+    }
+
+    &__price {
+      width: 100%;
+  @include m.flex(flex, row, nowrap, center,center);
+      margin-bottom:2em;
+      .price__actual {
+        @include m.font(default, 2.5em, default);
+        justify-self: flex-start;
+      }
+      .price__offert {
+        @include m.font(700, 1.4em, default);
+        background: map-get(c.$colors, "pale-orange") ;
+        position:inherit;
+        margin-left: 1em;
+      }
+      .price__previous {
+        display: inline-block;
+        @include m.font(700, 1.4em, default);
+        margin-left: auto;
+        position: inherit;
+      }
+    }
+    &__count {
+      width:100%;
+      @include m.flex(default, column, default, default, default);
+    }
+    &__amount{
+    @include m.flex(default, default, default, space-between, default);
+    @include m.font(default, 1.5em, default);
+
+      width: 100%;
+      padding: 1.3em 2em;
+      border-radius: 10px;
+      margin-bottom: .5em ;
+      img{
+        width:3.5%;
+      }
+    }
+    &__add {
+    @include m.font(default, 1.3em, default);
+        
+    }
+    
+  }
+  .toggle-menu {
+    width: 71%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width:550px){
+  .article-text{
+    margin-top:-5em;
+    }
+}

@@ -1,0 +1,40 @@
+// ARRAYS
+@use  "colors" as c;
+@use  "header";
+@use "content";
+@use "article-images";
+@use "article-text";
+@use "menu-burger";
+
+
+.big-img{
+    display: block;
+    width: 100%;
+}
+
+.none{
+    display: none;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.black{
+    background: map-get(c.$colors, "black");
+    filter:brightness(0.3)
+}
+
+.filter{
+    filter: opacity(30%);
+}
+
+.border-transparent{
+    border: 2px solid transparent;
+}
+
+.border-orange{
+    border: 3px solid map-get(c.$colors, "orange");
+}
+
+

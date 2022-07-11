@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/ResetCssPro.css" />
+  <title>Frontend Mentor | E-commerce product page</title>
+  <script src="https://kit.fontawesome.com/7a00ebfa89.js" crossorigin="anonymous"></script>
+
+  <script src="/scripts/slider.js"  type="module"></script>
+  <script src="/scripts/cart.js"  type="module"></script>
+  <script src="/scripts/burguer.js"  type="module"></script>
+  <script src="/scripts/main.js" defer type="module"></script>
+</head>
+
+<body>
+  <div class="article-images--flotant hidden">
+    <img class="button-flotant button-previous" src="/images/icon-previous.svg" alt="icon-previous"> 
+    <img class="flotant-img-close" src="/images/icon-close.svg" alt="">
+    <div class="article-images__main-img--flotant">
+      <img src="/images/image-product-1.jpg" class="big-img--flotant" alt="image1-big">
+      <img class="button-flotant button-next" src="/images/icon-next.svg" alt="icon-previous">
+    </div> 
+
+    <div class="article-images__small-img--flotant ">
+      <img src="/images/image-product-1-thumbnail.jpg" class="article-images__img small-img--flotant border-transparent" alt="image1-small" />
+
+      <img src="/images/image-product-2-thumbnail.jpg" class="article-images__img small-img--flotant border-transparent" alt="image2.big" />
+
+      <img src="/images/image-product-3-thumbnail.jpg" class="article-images__img small-img--flotant border-transparent" alt="image3-small" />
+
+      <img src="/images/image-product-4-thumbnail.jpg" class="article-images__img small-img--flotant border-transparent " alt="image4-small" />
+    </div>
+  </div>
+  
+
+  <main class="main">
+    <header class="header">
+
+      <div class="toggle-menu">
+        <img src="/images/menu.png" alt="menu" class="toggle-button-burguer">
+        <img src="/images/close.png" alt="menu_x" class="toggle-button-x none">
+      </div>
+      
+      <img class="header__logo" src="/images/logo.svg" alt="logo_sneakers" />
+
+      <nav class="nav">
+        <ul class="nav__list ">
+          <li class="list__options">Collections</li>
+          <li class="list__options">Men</li>
+          <li class="list__options">Women</li>
+          <li class="list__options">About</li>
+          <li class="list__options">Contact</li>
+        </ul>
+      </nav>
+
+      <img class="header__cart cart push-right" src="/images/icon-cart.svg" alt="cart" />
+      <div class="header__num-product hidden">3</div>
+      <img class="header__avatar" src="/images/image-avatar.png" alt="avatar" />
+
+      <div class="card-cart hidden cart">
+
+        <h3 class="card-cart__h3 cart">Cart</h3>
+        <div class="card-cart__empty cart">
+          <p class="empty__paragraph cart">You cart is empty.</p>
+        </div>
+
+        <div class="card-cart__articles none cart">
+          <div class="articles__div-1 cart">
+            <img class="articles__img cart" src="/images/image-product-1-thumbnail.jpg" alt="image-sneakers">
+            <div class="articles__text cart">
+              <p class="articles__paragraph cart">Fall Limited Edition Sneakers</p>
+              <span class="articles__articles cart">$125.00 x </span>
+              <span class="articles__price cart"></span>
+            </div>
+            <img class="articles__cart-delete cart" src="/images/icon-delete.svg" alt="delete">
+          </div>
+          <button class="articles__button">Checkout</button>
+        </div>
+      </div>
+    </header>
+
+
+    <section class="content">
+      <article class="article-images">
+        <div class="article-images__main-img ">
+          <img src="/images/image-product-1.jpg" class=" big-img main-img" alt="image1-big" />
+        </div>
+
+        <div class="article-images__small-img">
+          <img src="/images/image-product-1-thumbnail.jpg" class="article-images__img border-transparent " alt="image1-small " />
+
+          <img src="/images/image-product-2.jpg" class="article-images__img border-transparent" alt="image2-small" />
+
+          <img src="/images/image-product-3-thumbnail.jpg" class="article-images__img border-transparent" alt="image3-small" />
+
+          <img src="/images/image-product-4-thumbnail.jpg" class="article-images__img border-transparent" alt="image4-small" />
+        </div>
+      </article>
+
+      <article class="article-text">
+        <h1 class="article-text__company-name">SNEAKER COMPANY</h1>
+
+        <h2 class="article-text__product-name">
+          Fall Limited Edition Sneakers
+        </h2>
+
+        <p class="article-text__description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <p class="article-text__price">
+          <span class="price__actual">$125.00 </span>
+          <span class="price__offert">50%</span>
+          <span class="price__previous">$250.00 </span>
+        </p>
+
+        <div class="article-text__count cart">
+          <div class="article-text__amount cart">
+            <img src="/images/icon-minus.svg" alt="minus" class="amount__img-minus cart" />
+            <p class="amount__counter">0</p>
+            <img src="/images/icon-plus.svg" alt="plus" class="amount__img-plus cart" />
+          </div>
+          <button class="article-text__add cart">
+            <i class="fa-solid fa-cart-shopping cart"></i>
+            Add to cart
+          </button>
+        </div>
+
+
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>

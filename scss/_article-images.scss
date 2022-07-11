@@ -1,0 +1,233 @@
+@use "colors" as c ;
+@use "fonts" as f ;
+@use "mixins" as m ;
+
+img {
+    width:20%;
+}
+
+.article-images{
+    margin-left: 7em;
+    margin-top:3em;
+    cursor: pointer;
+    width:70%;
+    @include m.flex(flex,column,nowrap,flex-start,center);
+
+    &__img{
+        border-radius: 15px;
+        cursor: pointer;
+        &:hover{
+            filter: opacity(40%);
+        }
+    }
+
+    &__main-img{
+        display:flex;
+        justify-content: flex-end;
+    }
+
+    &__small-img{
+        margin-top:2em;
+    @include m.flex(flex,row,nowrap,space-between,center);
+
+    }
+    
+}
+
+.big-img,
+.big-img--flotant{
+    border-radius: 15px;
+    width: 100%;
+    cursor:default;
+    &:hover{
+        filter: none;
+    }
+}
+
+// IMAGES-FLOTANT
+
+.article-images--flotant{
+    position: absolute;
+    top:12%;
+    left: 30%;
+    z-index: 10;
+    width: 38%;
+    max-width: 30em;
+
+}
+
+.article-images__small-img--flotant{
+    width: 90%;
+    margin: 2em auto;
+    @include m.flex(flex,row,nowrap,space-between,center);
+
+    
+}
+
+.small-img--flotant{
+    &:hover{
+        filter: opacity(100%) ;
+        filter: invert(30%);
+            
+        }
+}
+
+.button-flotant{
+    box-sizing:content-box;
+    width: 3%;
+    padding: 1.1em 1.3em;
+    background: white;
+    border-radius: 50%;
+    z-index: 1000;
+    cursor: pointer;
+    position:absolute;
+    &:hover{        
+        background: map-get(c.$colors, "orange")
+    }
+}
+
+.button-previous{
+    top:33.5%;
+    left: -5%;
+   
+}
+
+.button-next{
+    bottom:58%;
+    left: 94%;
+}
+
+.flotant-img-close{
+    filter:brightness(2);
+    width:4.3%;
+    position:relative;
+    right: -95%;
+    top: -16px;
+    cursor: pointer;
+    &:hover{
+        background: map-get(c.$colors, "orange");
+        filter:brightness(1);
+        
+
+    }
+}
+
+@media screen and (max-width:1200px){
+    .button-previous{
+        top:33.5%;
+        left: -7%;
+       
+    }
+
+    .button-next{
+        bottom:57%;
+        left: 94%;
+    }
+}
+
+@media screen and (max-width:1000px){
+
+    .button--flotant{
+        width: 3%;
+        padding: 1em 1.2em;
+    }
+    .button-previous{
+        left: -6%;
+       
+    }
+
+    .button-next{
+        left: 92%;
+    }
+}
+
+
+@media screen and (max-width:900px){
+    .article-images{
+        width: 80%;
+        margin-left: 3em;
+
+    }
+}
+
+
+@media screen and (max-width:768px){
+    .article-images{
+        width: 100%;
+        height: 70%;
+        margin: 0;
+
+        &__main-img{
+            height:100%;
+            
+        }
+        .main-img{
+            object-fit: cover;
+        }
+        img{
+            border-radius: 0;
+        }
+
+    }
+    .article-images__small-img{
+        display: none;
+    }
+
+    .button-flotant{
+        visibility: visible;
+        font-size: .7em;
+        width: 6%;
+    }
+
+    .button-next{
+        bottom:-93%;
+        left: 146%;
+    }
+
+    .button-previous{
+        top:154%;
+        left: -61%;
+    }
+    
+    .big-img--flotant{
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width:450px){
+    .article-images{
+        width: 100%;
+        height: 80%;
+        margin: 0;
+
+        &__main-img{
+            height:100%;
+            
+        }
+        .main-img{
+            object-fit: cover;
+        }
+        img{
+            border-radius: 0;
+        }
+
+    }
+
+    .button-flotant{
+        font-size: .5em;
+        width: 6%;
+    }
+
+    .button-next{
+        bottom:-5%;
+        left: 146%;
+    }
+
+    .button-previous{
+        top:73%;
+        left: -62%;
+    }
+
+}

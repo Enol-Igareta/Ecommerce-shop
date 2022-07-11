@@ -1,0 +1,205 @@
+@use "colors" as c;
+@use "fonts" as f;
+@use "mixins" as m;
+
+.header {
+  width: 80%;
+  height: 6em;
+  margin: 0 auto;
+  border-bottom: 1px solid map-get(c.$colors, "light-grayish");
+  @include m.flex(flex, row, nowrap, flex-start, center);
+  margin-bottom: 1em;
+
+  &__logo {
+    margin-right: 2em;
+    width: 13%;
+    position: relative;
+    top: -0.2em;
+  }
+
+  &__num-product {
+    @include m.font(500, 0.5em, map-get(c.$colors, "white"));
+    background-color: map-get(c.$colors, "orange");
+    padding: 1px 6px;
+    border-radius: 40%;
+    position: relative;
+    bottom: 7.2%;
+    right: 1.1%;
+  }
+
+  &__cart {
+    align-self: center;
+    width: 2%;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(0.1);
+    }
+  }
+
+  &__avatar {
+    margin-left: 2.5em;
+    width: 4.5%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    &:hover {
+      border: 2px solid map-get(c.$colors, "orange");
+    }
+  }
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+.nav {
+  width: 40%;
+
+  &__list {
+    font-size: 16px;
+    color: map-get(c.$colors, "dark-grayish");
+    @include m.flex(flex, row, nowrap, space-evenly, center);
+    letter-spacing: 0.03em;
+  }
+  .list__options{
+    cursor: pointer;
+  }
+  .list__options:hover {
+    color: map-get(c.$colors, "black");
+    padding-bottom: 2.8em;
+    position: relative;
+    top: 24px;
+    border-bottom: 4px solid map-get(c.$colors, "orange");
+  }
+}
+
+.card-cart {
+  z-index: 10;
+  position: absolute;
+  background: map-get(c.$colors, "white");
+  top: 10%;
+  right: 5.6%;
+  width: 17em;
+  height: 13em;
+  border-radius: 10px;
+  @include m.flex(flex, column, nowrap, flex-start, flex-start);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.185);
+
+  &__h3 {
+    @include m.font(700, 0.8em, map-get(c.$colors, "black"));
+    padding: 1.5em 1.2em;
+    width: 100%;
+    border-bottom: 1px solid map-get(c.$colors, "grayish");
+  }
+
+  &__empty {
+    margin: 0 auto;
+    padding-top: 4.6em;
+    @include m.font(700, 0.8em, map-get(c.$colors, "dark-grayish"));
+    z-index: 10;
+  }
+
+  &__articles {
+    @include m.flex(flex, column, nowrap, space-evenly, space-between);
+    height: 100%;
+    .articles__div-1 {
+      @include m.flex(flex, row, nowrap, space-between, flex-start);
+      width: 90%;
+      margin: 0 auto;
+      .articles__img {
+        width: 18%;
+        border-radius: 5px;
+      }
+      .articles__text {
+        align-self: center;
+        @include m.font(500, 0.75em, map-get(c.$colors, "dark-grayish"));
+      }
+      .articles__price {
+        @include m.font(700, 1em, map-get(c.$colors, "black"));
+      }
+      .articles__cart-delete {
+        width: 4%;
+        position: relative;
+        top: 15px;
+        cursor: pointer;
+      }
+
+      .articles__paragraph {
+        margin-bottom: 0.7em;
+      }
+    }
+
+    .articles__button {
+      @include m.font(700, 0.7em, map-get(c.$colors, "white"));
+      background-color: map-get(c.$colors, "orange");
+      width: 90%;
+      margin: 0 auto;
+      height: 3.6em;
+      border-radius: 8px;
+      cursor: pointer;
+      &:hover {
+        filter: opacity(40%);
+      }
+    }
+  }
+}
+
+// mobile desing
+
+@media (max-width: 1200px) {
+  .nav {
+    width: 55%;
+  }
+
+  .header__avatar {
+    min-width: 6%;
+    margin-left: 0.5em;
+  }
+
+  .header__cart {
+    min-width: 3%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: auto;
+    margin-top: .8em;
+    border: none;
+
+    &__logo {
+      width: 7.3em;
+      position: inherit;
+    }
+
+    &__cart {
+      width: 5.1em;
+    }
+    &__avatar {
+      width: 5.8em;
+    }
+    &__num-product {
+      padding: 1px 5px;
+      bottom: 10px;
+      right: 3.5%;
+    }
+  }
+
+  .card-cart {
+    top: 8.5%;
+    right: 4.1%;
+    width: 93.5%;
+    height: 31%;
+
+    &__articles {
+      width: 100%;
+    }
+  }
+
+}

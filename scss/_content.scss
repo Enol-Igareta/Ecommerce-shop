@@ -1,0 +1,30 @@
+@use "colors" as c ;
+@use "fonts" as f ;
+@use "mixins" as m ;
+
+.main{
+    height:100vh;
+    margin: 0 auto;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 70vh;
+    width: 90%;
+    margin:0 auto;
+    max-width: 70em;
+}
+
+@media screen and (max-width:1200px){
+    .content{
+        width:100%;
+    }
+}
+
+
+ @media screen and (max-width:768px){
+    .content{
+        grid-template-columns: 1fr;
+    }
+}
+
